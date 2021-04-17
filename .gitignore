@@ -1,0 +1,6 @@
+__pycache__
+/build
+/dist
+*.spec
+*.mp3
+.DS_Store
