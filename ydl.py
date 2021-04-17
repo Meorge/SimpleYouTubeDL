@@ -1,5 +1,7 @@
-from PyQt5.QtWidgets import QErrorMessage, QFormLayout, QMainWindow, QLineEdit, QMessageBox, QProgressBar, QPushButton, QWidget, QLabel
+from PyQt5.QtWidgets import QApplication, QErrorMessage, QFormLayout, QMainWindow, QLineEdit, QMessageBox, QProgressBar, QPushButton, QWidget, QLabel
 from download_thread import TrackDownloader
+from sys import argv, exit
+import os, os.path
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -75,6 +77,8 @@ class MainWindow(QMainWindow):
 
 
 if __name__ == "__main__":
+
+    os.environ["PATH"] += os.pathsep + os.path.dirname(os.path.realpath(__file__))
     app = QApplication(argv)
     window = MainWindow()
     window.show()
